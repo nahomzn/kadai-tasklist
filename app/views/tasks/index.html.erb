@@ -3,12 +3,21 @@
   
   <h1>タスク一覧</h1>
 
-  <ul>
-      <% @tasks.each do |task| %>
-        <li><%= link_to task.id,task %> : <%= task.content %> &gt; <%= task.status %></li>
-      <% end %>
-  </ul>
-  <%= link_to '新規タスクの作成' , new_task_path %>
+  <table class="table table-bordered">
+    <tr>
+      <th class="text-center">id</th>
+      <th class="text-center">task</th>
+      <th class="text-center">status</th>
+    </tr>
+    <% @tasks.each do |task| %>
+    <tr>
+        <td><%= link_to task.id,task %></td>
+        <td class="text-left"><%= task.content %></td>
+        <td class="text-left"><%= task.status %></td>
+    </tr>
+    <% end %>
+  </table>
+  <%= link_to '新規タスクの作成' , new_task_path, class: 'btn-lg btn-primary' %>
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
