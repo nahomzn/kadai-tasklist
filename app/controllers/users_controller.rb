@@ -1,9 +1,4 @@
 class UsersController < ApplicationController
-  def index
-  end
-
-  def show
-  end
 
   # ユーザ登録用のフォーム設置
   def new
